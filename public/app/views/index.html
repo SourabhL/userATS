@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="mainApp">
+<head>
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  	<link rel="stylesheet" href="app/animations.css" type="text/css"/>
+	<base href="/" />
+	<script type="text/javascript" src="app/js/jquery.js"></script>
+	<script type="text/javascript" src="app/js/bootstrap.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-route.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-animate.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	
+	<script type="text/javascript" src="app/app.routes.js"></script>
+	<!-- Controller and Services -->
+	<script type="text/javascript" src="app/services/authService.js"></script>
+	<script type="text/javascript" src="app/services/storyService.js"></script>	
+	<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+	<script type="text/javascript" src="app/services/user.js"></script>
+	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/views/pages/ckeditor/ckeditor.js"></script>
+	<style>
+		img
+		{
+
+			float: left;
+			width: 200px;
+			height: 70px;
+			padding:0;
+			position:relative;
+			margin-left:45px;
+			margin-top: 0px;
+		}
+		
+	</style>
+</head>
+
+<body ng-controller="MainController as main">
+	
+	<nav class="navbar navbar-static-top">
+		<div style="margin-right: 50px;">
+			<div class="navbar-header">
+				
+				<a class="navbar-brand" href="#/dash" ng-if="main.loggedIn">
+					<img src="app/views/pages/images/ATS.png" alt="logo" />
+				</a>
+					
+				<a class="navbar-brand" href="#/" ng-if="!main.loggedIn">
+					<img src="app/views/pages/images/ATS.png" alt="logo"/>
+				</a>
+
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>
+
+		  	<div class="navbar-collapse collapse navHeaderCollapse">
+			  	<ul class="nav navbar-nav navbar-right">
+					        
+					<li><a href="/"><i></i></a></li>
+					
+					<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
+
+
+	
+					<li ng-if="main.loggedIn"><a href="#/dash"><i class="fa fa-x fa-user"> {{main.loginData.name}} </i></a>
+					</li>
+					<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+			  	</ul>
+				
+		  	</div>
+			<br/>
+			<div class="text-info" ng-if="main.loggedIn">
+			<br/>
+				<ul class="nav nav-tabs" ng-if="main.loggedIn">
+					<li class="active" >
+						<a href="#/dash"><i class="fa fa-home"></i> Dashboard</a>
+					</li>
+					<li >
+						<a href="#/contact"><i class="fa fa-search"></i> Search Requirements</a>
+					</li>			        
+					
+					<li>
+						<a href="#/email"><i class="fa fa-edit"></i> Edit Resume</a>
+					</li>			        
+					<li>
+						<a href="#/documents"><i class="fa fa-file"></i> Documents</a>
+					</li>			
+
+					<li>
+						<a href="#/home"><i class="fa fa-home"></i> Vertisystem Blog</a>
+					</li>	
+			
+				</ul>
+			</div>
+		  		
+		</div>
+		
+	</nav>
+
+
+	<!-- <div class="col-md-offset-1 col-md-10" ng-if="main.loggedIn">
+		<button class="btn btn-success navbar-btn">The History</button>
+		<button class="btn btn-primary navbar-btn">What's New</button>
+		<button class="btn btn-warning navbar-btn">What's New</button>
+		<button class="btn btn-danger navbar-btn">What's New</button>
+	
+	</div>
+			 -->
+	
+	
+	<div ng-view class="slide-animation"></div>
+	
+
+
+	
+</body>
+</html>
