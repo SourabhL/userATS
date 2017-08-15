@@ -80,7 +80,7 @@
 			  	<ul class="nav navbar-nav navbar-right">
 					<li><a href="/"><i></i></a></li>
 					<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
-					<li ng-if="main.loggedIn"><a href="#/dash"><i class="fa fa-x fa-user"> Welcome,  {{main.loginData.name}} </i></a>
+					<li ng-if="main.loggedIn"><a href="#/dash"><i class="fa fa-x fa-user"></i> <strong>Welcome,  {{main.loginData.name}} </strong></a>
 					</li>
 					<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
 			  	</ul>
