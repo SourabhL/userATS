@@ -3,10 +3,10 @@
 <!-- define angular app -->
 <html ng-app="mainApp">
 <head>
+	<title>ATS - Vertisystem</title>
 	<!-- CSS Libraries -->
 	<link rel="stylesheet" href="app/views/pages/styles/bootstrap.min.css" />
 	<link rel="stylesheet" href="app/views/pages/styles/font-awesome.min.css" />
-  	
 	<!-- Custom CSS -->
   	<link rel="stylesheet" href="app/animations.css" type="text/css"/>
   	<link rel="stylesheet" href="app/views/pages/styles/style.css" type="text/css"/>
@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="app/views/pages/scripts/angular-animate.js"></script>
 
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="app/app.routes.js"></script>
 	<script type="text/javascript" src="app/views/pages/ckeditor/ckeditor.js"></script>
 
@@ -80,7 +80,7 @@
 			  	<ul class="nav navbar-nav navbar-right">
 					<li><a href="/"><i></i></a></li>
 					<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
-					<li ng-if="main.loggedIn"><a href="#/dash"><i class="fa fa-x fa-user"> {{main.loginData.name}} </i></a>
+					<li ng-if="main.loggedIn"><a href="#/dash"><i class="fa fa-x fa-user"> Welcome,  {{main.loginData.name}} </i></a>
 					</li>
 					<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
 			  	</ul>
@@ -89,26 +89,47 @@
 			<br/>
 			<div class="text-info" ng-if="main.loggedIn">
 			<br/>
-				<ul class="nav nav-tabs" ng-if="main.loggedIn">
-					<li class="active" >
-						<a href="#/dash"><i class="fa fa-home"></i> Dashboard</a>
-					</li>
-					<li >
-						<a href="#/contact"><i class="fa fa-search"></i> Search Requirements</a>
-					</li>			        
-					
-					<li>
-						<a href="#/email"><i class="fa fa-edit"></i> Edit Resume</a>
-					</li>			        
-					<li>
-						<a href="#/documents"><i class="fa fa-file"></i> Documents</a>
-					</li>			
+				<!--<ul class="nav nav-tabs" ng-if="main.loggedIn">
+				 	<li class="active" >
+					<a href="#/dash"><i class="fa fa-home"></i> Dashboard</a>
+				</li>
+				<li >
+					<a href="#/contact"><i class="fa fa-search"></i> Search Requirements</a>
+				</li>			        
+				
+				<li>
+					<a href="#/email"><i class="fa fa-edit"></i> Edit Resume</a>
+				</li>			        
+				<li>
+					<a href="#/documents"><i class="fa fa-file"></i> Documents</a>
+				</li>			
+				
+				<li>
+					<a href="#/home"><i class="fa fa-home"></i> Vertisystem Blog</a>
+				</li>	
+							
+								</ul> -->
 
-					<li>
-						<a href="#/home"><i class="fa fa-home"></i> Vertisystem Blog</a>
-					</li>	
-			
-				</ul>
+					<div class="row">
+            			<!-- <div class="col-sm-3">
+            			        			                <div class="tab-content">
+            			        			                     <a class="btn-lg" ng-click="addTab()" href=""> Add new tab</a>
+            			        			                    <div>Campaign Name:
+            			        			                        <input ng-model="selectedTab.name">
+            			        			                        <br>Campaign Info:
+            			        			                        <br>This is tab {{view_tab + 1}} content</div>
+            			        			                </div>
+            			        			            </div> 	     -->        
+			            <div class="col-md-12">
+			                <ul class="nav nav-tabs" role="tablist">
+			                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
+			                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index)" href=""> {{tab.name}}</a>
+			                    </li>
+			                </ul>
+			            </div>
+             		</div>
+
+
 			</div>
 		  		
 		</div>

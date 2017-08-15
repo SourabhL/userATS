@@ -1,13 +1,188 @@
+	<div class="row" style="margin-left: 25px;margin-right: 25px;">
+		<div class="page-wrapper">
+			<div class="page-content">
+				<div class="col-md-12">
+					<p style="font: bold; color: #045e81;">
+						<font size="4" color="#045e81">Logged In As :</font> <font size="4"
+							color="#2C3E50">Recruiter</font>
+					</p>
+				</div>
 
-<div class="col-md-offset-1 col-md-10">
-	
-	<div class="jumbotron">
-		<h2 class="text-primary">
-			Welcome to the Vertisystem ATS
-		</h2>
-		<p class="text-primary">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quasi molestias soluta ipsam est harum aut suscipit porro, at voluptatem. Illo, exercitationem, dolorem? Eum, eaque vitae, tempora eos non vel.
-		</p>
+				<div class="my-class col-md-12"
+					style="border: 1px thin rgb(86, 180, 239); box-shadow: 0px 1px 3px #B7B2B2 inset, 0px 0px 8px #B7B2B2; margin-bottom: 10px;">
+					<br/>
+					<div class="col-md-3"
+						style="border: 1px thin rgb(86, 180, 239); margin-bottom: 10px;">
+
+						<i><em><font size="5">My Recent Calls</font></em> </i>
+						<hr>
+
+						<a href="#/OrderHistory" class="btn btn-primary"
+							style="text-decoration: none; color: white;">06-11-18 03:28 PM:   Teresa Robbengobbler</a>
+
+						<hr>
+
+						<a href="#/OrderHistory" class="btn btn-primary"
+							style="text-decoration: none; color: white;">04-10-18 06:26 PM:   Rosa Meltroso</a>
+
+						<hr>
+
+						<a href="#/OrderHistory" class="btn btn-primary"
+							style="text-decoration: none; color: white;">04-10-18 05:24 PM:   Rosa Meltroso</a>
+
+						
+						<hr>
+					</div>
+
+
+					<div class="col-md-3"
+						style="border: 1px thin rgb(86, 180, 239); box-shadow: 2px 0px 0px #B7B2B2 inset, 2px 0px 0px #B7B2B2; margin-bottom: 10px;">
+
+						<i><em><font size="5">My Upcoming Calls</font></em> </i>
+						<hr>
+						<a href="#/DigitalNotification" class="btn btn-danger "
+							style="text-decoration: none; color: white;">30-08-17 01:00 AM: Follow on HANA position</a>
+						<hr>
+						<a href="#/SoftLaunch" class="btn btn-danger"
+							style="text-decoration: none; color: white;"> Interview - GDC Reg Receptionist</a>
+					</div>
+
+					<div class="col-md-3"
+						style="border: 1px thin rgb(86, 180, 239); box-shadow: 2px 0px 0px #B7B2B2 inset, 2px 0px 0px #B7B2B2; margin-bottom: 10px;">
+
+						<i><em><font size="5">My Upcoming Events</font></em> </i>
+						<hr>
+						<a href="#/OrderHistory" class="btn btn-primary"
+							style="text-decoration: none; color: white;">01-08-18 11:23 AM:   alam ansari</a>
+						<hr>
+						
+						<a href="#/EmailTracker" class="btn btn-success"
+							style="text-decoration: none; color: white;"
+							>Email Tracker</a>
+						<hr>
+					</div>
+					<div class="col-md-3"
+						style="border: 1px thin rgb(86, 180, 239); margin-bottom: 10px;">
+						<i><em><font size="5">Reports</font></em> </i>
+						<hr>
+						<button class="btn btn-warning"
+							ng-click="NotAvailable()">Timesheet</button>
+						<hr>
+					</div>
+
+
+				</div>
+				<div class="col-md-offset-0 col-md-3">
+					<div class="col-md-offset-2 col-md-12"
+						style="box-shadow: 2px 0px 0px #B7B2B2 inset, 2px 0px 0px #B7B2B2;">
+						
+					</div>
+				</div>
+			</div>
+
+			<!--below table -->
+			<div class="col-md-12" ng-controller="contactController">
+				
+				<div class="col-md-6">
+					<h3 class="text-danger"> <strong>
+						Hiring - (August 2017) :- {{people.length}} </strong>
+					</h3>
+
+					<input type="text" class="form-control text-left" ng-model="userName" placeholder="Search........"/>{{userName}}
+						
+					<br/>
+					<table class="table table-striped text-primary">
+						<thead>
+							<tr>
+								<th ng-click="sortBy='name';reverse!=reverse"><strong>Name</strong></th>
+								<th ng-click="sortBy='city';reverse!=reverse"><strong>Client</strong></th>
+								<th ng-click="sortBy='joined';reverse!=reverse"><strong>Job Title</strong></th>
+								<th ng-click="sortBy='total';reverse!=reverse"><strong>Created Date</strong></th>
+								<th ng-click="sortBy='total';reverse!=reverse"><strong>Total</strong></th>
+								<th ng-click="sortBy='total';reverse!=reverse"><strong>Details</strong></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr ng-repeat="person in people | filter: userName | orderBy:sortBy:reverse" class="repeat-animation">
+								<td>{{person.name | uppercase}}</td>
+								<td>{{person.team}}</td>
+								<td>{{person.joined | date}}</td>
+								<td>{{person.joined | date}}</td>
+								<td>{{person.total | currency : 'Rs.'}}</td>
+								<td><a href="#/about/{{person.id}}"><strong>View Tickets</strong></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					
+					<div class="col-md-6">
+			
+						<h3 class="text-danger"> <strong>
+							Hiring Overview : </strong>
+						</h3>
+
+						<div id="piechart"></div>
+
+						
+						<script type="text/javascript">
+						// Load google charts
+						google.charts.load('current', {'packages':['corechart']});
+						google.charts.setOnLoadCallback(drawChart);
+						
+						// Draw the chart and set the chart values
+						function drawChart() {
+						  var data = google.visualization.arrayToDataTable([
+						  ['Facebook', 'Hours per Day'],
+						  ['Clorox', 8],
+						  ['Sales Force', 2],
+						  ['DRI', 4],
+						  ['Walmart', 2],
+						  ['IGT', 8]
+						]);
+						
+						  // Optional; add a title and set the width and height of the chart
+						  var options = {'title':'August 2017 : Per Client', 'width':550, 'height':400};
+						
+						  // Display the chart inside the <div> element with id="piechart"
+						  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+						  chart.draw(data, options);
+						}
+						</script> 
+
+							
+						
+				       
+				    </div> 
+
+
+				
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Please drop an e-mail to <a
+							href="mailto:ATTHaloAutomation@amdocs.com"
+							style="font-size: 18px; color: #2C3E50;"><strong>ITHelpdesk@vertisystem.com</strong></a>
+						in case of any assistance needed.
+					</p>
+				</div>		
+			</div>
+			<br /> <br />
+			<br /> <br />
+
+		</div>
+
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<div class="navbar-collapse collapse  navHeaderCollapse">
+					<p class="navbar-text pull-left">Copyright Vertisystem 2015</p>
+				</div>
+			</div>
+
+		</div>
 	</div>
-	
-</div>
+
+

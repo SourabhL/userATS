@@ -1,6 +1,6 @@
 angular.module('mainCtrl',[])
 
-.controller('MainController', function($rootScope, $location, Auth)
+.controller('MainController', function($rootScope, $location, Auth,$scope)
 {
 	var vm = this;
 
@@ -51,7 +51,34 @@ angular.module('mainCtrl',[])
 		$location.path('#home');
 	}
 
-
+  $scope.view_tab = 0;
+	 $scope.tabs = [{
+            name: 'Dashboard',
+            tab_ref: '#/dash',
+        }, {
+            name: 'Search Requirements',
+            tab_ref: '#/contact'
+        },
+       {
+            name: 'Edit Resume',
+            tab_ref: '#/email'
+        }, {
+            name: 'Documents',
+            tab_ref: '#/documents'
+        }, {
+            name: 'Vertisystem Blog',
+            tab_ref: '#/home'
+        }];
+    
+    $scope.changeTab = function (index) {
+        $scope.view_tab = index;
+        $scope.selectedTab = $scope.tabs[index];
+    }
+    $scope.addTab = function () {
+        $scope.tabs.push({name: ''});
+    }
+    //Select first
+    $scope.changeTab(0);
 
 });
 
