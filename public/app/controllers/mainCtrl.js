@@ -56,20 +56,20 @@ angular.module('mainCtrl',[])
             name: 'Dashboard',
             tab_ref: '#/dash',
         }, {
-            name: 'Job Openings',
+            name: 'Work Status',
             tab_ref: '#/contact'
+        }
+        , {
+            name: 'Documents',
+            tab_ref: '#/documents'
+        }, {
+            name: 'HR Portal',
+            tab_ref: '#/home'
         },
        	{
             name: 'Candidates',
             tab_ref: '#/email'
         }
-        /*, {
-            name: 'Candidates',
-            tab_ref: '#/documents'
-        }, {
-            name: 'Vertisystem Blog',
-            tab_ref: '#/home'
-        }*/
         ];
     
     $scope.changeTab = function (index) {
