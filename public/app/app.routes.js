@@ -59,7 +59,7 @@ angular.module('appRoutes',['ngRoute'])
 			templateUrl : 'app/views/pages/dashboard.html'
 		})
 		// route for the dashboard page
-		.when('/myProfile', {
+		.when('/profile', {
 			templateUrl : 'app/views/pages/profile.html'
 		})
 		// route for the contact page
