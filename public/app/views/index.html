@@ -1,115 +1,169 @@
 <!DOCTYPE html>
+<html>
+    <!--Head section start-->
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!--Link bootstrap file-->
+        <link rel="stylesheet" href="css/stylesheet.css"><!--link stylesheet-->
+        <link rel="stylesheet" href="css/b2b_image_style.css"><!--link stylesheet-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Link font-awesome icon -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--Link JQuery file-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Link bootstrap jquery file-->
+        <script src="js/ios-orientationchange-fix.min.js"></script>
+        <script src="js/jquery.min.js"></script><!--Link jquery file-->
+        <script src="js/jquery.rwdImageMaps.min.js"></script>
+        <!--Javascript function call to change the image co-ordinate dynamically according to window size-->
+        <script src="js/b2b_image_script.js"></script> 
+        
+    </head>
+    <body>
+        
+        <div class="container-fluid"><!--Container fluid-->
+            <nav class="navbar navbar-inverse" ><!--Navigation bar -->
+                <div class="container-fluid">
+                    <div class="navbar-header" >
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand" href="#" ><b>Mobile Store</b></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav" style="font-size:16px">
+                            <li class="link-3" ><a href="#"><p>Edit Location</p></a></li>
+                            <li class="link-3" ><a href="#" ><p>Issue for This Location</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Image Gallery</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Questionnaries</p></a></li>
+                            <li class="link-3"><a href="#" ><p>All Content</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Orders</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Return to Dashbord</p></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav><!--End navigation bar-->
 
-<!-- define angular app -->
-<html ng-app="mainApp">
-<head>
-	<title>ATS - Vertisystem</title>
-	<!-- CSS Libraries -->
-	<link rel="stylesheet" href="app/views/pages/styles/font-awesome-4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="app/views/pages/styles/bootstrap.min.css" />
-	
-	<!-- Custom CSS -->
-  	<link rel="stylesheet" href="app/animations.css" type="text/css"/>
-  	<link rel="stylesheet" href="app/views/pages/styles/style.css" type="text/css"/>
-	<base href="/" />
+            <img class="img-responsive store" src="Images\Store.png" usemap="#mobilestore" ><!--Mobile store Image -->
+         
+            <map name="mobilestore"><!--Map started -->
+                <!--polygons-->
+                <!--upper left-->
+                <area coords="113,6,41,7,39,55,60,73,92,74,115,74,138,74,169,70,188,55,188,4" shape="poly" 
+                      data-reveal-id="one" data-toggle="modal" data-target="#myModal">
+                <!--lower right-->
+                <area shape="poly" coords="466,501,466,453,487,439,504,434,524,434,537,434,546,435,562,435,582,436,592,434,606,437,613,446,616,456,614,467,618,478,620,488,620,500" data-reveal-id="one" data-toggle="modal" data-target="#myModal" />
+                <!--upper right-->
+                <area shape="poly" coords="467,5,626,5,622,75,557,71,531,71,509,71,467,72,469,7,583,72,521,39"  data-reveal-id="one" data-toggle="modal" data-target="#myModal">
+                <!--lower left-->
+                <area shape="poly" coords="38,500,40,451,60,437,172,437,191,454,189,501,113,503,153,502,72,502" data-reveal-id="one" data-toggle="modal" data-target="#myModal">
 
-	<!-- Libraries and Plugins -->
-	<script type="text/javascript" src="app/views/pages/scripts/jquery.js"></script>
-	<script type="text/javascript" src="app/views/pages/scripts/bootstrap.js"></script>
-	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-route.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-animate.js"></script> -->
-	<script type="text/javascript" src="app/views/pages/scripts/angular.min.js"></script>
-	<script type="text/javascript" src="app/views/pages/scripts/angular-route.min.js"></script>
-	<script type="text/javascript" src="app/views/pages/scripts/angular-animate.js"></script>
 
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript" src="app/app.routes.js"></script>
-	<script type="text/javascript" src="app/views/pages/ckeditor/ckeditor.js"></script>
+                <!--rectangles-->
+                <area shape="rect" coords="218,116,311,156" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--first-->
+                <area shape="rect" coords="341,116,435,155" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--second-->
+                <area shape="rect" coords="23,226,125,285"  data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--third-->
+                <area shape="rect" coords="177,226,282,284" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--fourth-->
+                <area shape="rect" coords="331,224,434,283" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--fifth-->
+                <area shape="rect" coords="216,352,313,394" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--sixth-->
+                <area shape="rect" coords="342,353,436,392" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--seventh-->
+            </map>
+            <!--Map End here............. -->
 
-	<!-- Controller and Services -->
-	<script type="text/javascript" src="app/services/authService.js"></script>
-	<script type="text/javascript" src="app/services/storyService.js"></script>	
-	<script type="text/javascript" src="app/services/user.js"></script>
+            <!-- Shelf1 Image Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog" >
+                    <div class="modal-content">
 
-	<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>	
-	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
-	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
-	
-	<script type="text/javascript" src="app/app.js"></script>
-	
-	<style>
-		img
-		{
+                        <!--navidation bar on modal-->
+                        <div class="modal-header" >
+                            <ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:13px;">
+                                <li class="active link-4"><a href="#" data-toggle="tab">View Fixture</a></li>
+                                <li class="link-4"><a href="#" >Accessories and POP</a></li>
+                                <li class="link-4"><a href="#" >Devices and Display</a></li>
+                                <li class="link-4"><a href="#" >Fixtures and Hardware</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Gallery</a></li>
+                                <li class="link-4"><a href="#" ><div data-dismiss="modal">&times;</div></a></li>
+                            </ul>
+                        </div>
+                        <div class="row" style="border:none; display:inline">
+                            
+                            <div class="col-sm-offset-1 col-sm-4" style="padding-top:0.5%">
+                                <img class="img-responsive" src="Images\shelf1.jpg" usemap="#shelf" width="250" height="400" />
+                               
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--End modal1-->
 
-			float: left;
-			width: 200px;
-			height: 70px;
-			padding:0;
-			position:relative;
-			margin-left:45px;
-			margin-top: 0px;
-		}
-		
-	</style>
-</head>
 
-<body ng-controller="MainController as main">
-	
-	<nav class="navbar navbar-default navbar-static-top">
-		<div style="margin-right: 50px;">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#/dash" ng-if="main.loggedIn">
-					<img src="app/views/pages/images/ATS.png" alt="logo" />
-				</a>
-					
-				<a class="navbar-brand" href="#/" ng-if="!main.loggedIn">
-					<img src="app/views/pages/images/ATS.png" alt="logo"/>
-				</a>
-				<br/><br/>
-				<button class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navHeaderCollapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
-			</div>
+            <div class="modal fade" id="myModal2" role="dialog" >
+                <div class="modal-dialog modal-lg"  >
+                    <div class="modal-content">
+                        <!--navidation bar on modal-->
+                        <div class="modal-header" >
+                            <ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:15px">
+                                <li class="active" class="link-4"><a href="#" data-toggle="tab">View Fixture</a></li>
+                                <li class="link-4"><a href="#" >Accessories and POP</a></li>
+                                <li class="link-4"><a href="#" >Devices and Display</a></li>
+                                <li class="link-4"><a href="#" >Fixtures and Hardware</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Gallery</a></li>
+                                <li class="link-4"><a href="#" ><div data-dismiss="modal">&times;</div></a></li>
+                            </ul>
+                        </div>
+                        <div class="row" style="border:none; display:inline">
+                            <div class="col-sm-offset-1 col-sm-4" style="padding-top:0.5%">
 
-		  	<div class="navbar-collapse collapse navHeaderCollapse">
+                                <img class="img-responsive" src="Images\Shelf2.jpg" usemap="#shelf" style="padding-bottom:4%"       width="250" height="400" />
+                                <img src="Images\mobile.png"  id="img1" class="mobile1 moved"/>
+                                <img src="Images\mobile2.png" id="img2" class="mobile2 moved"/>
+                                <img src="Images\mobile3.png" id="img3" class="mobile3 moved"/>
+                                <img src="Images\mobile4.png" id="img4" class="mobile4 same"/>
+                                <img src="Images\mobile5.png" id="img5" class="mobile5 same"/>
+                                <img src="Images\mobile6.png" id="img6" class="mobile6 same"/>
+                                <img src="Images\mobile7.png" id="img7" class="mobile7 newlyAdded"/>
+                                <img src="Images\mobile8.png" id="img8" class="mobile8 newlyAdded"/>
+                                <img src="Images\mobile9.png" id="img9" class="mobile9 newlyAdded"/>
+                                        
+                                <form>
+                                    <div class="checkbox" >
+                                        <label>
+                                            <input type="checkbox" onclick="highlightImages(this)" id="highlightChangedCheck" 
+                                            value="highlightChangedCheck">
+                                                Highlight changed content
+                                            </label>
+                                    </div>
+                                    <div class="checkbox" >
+                                        <label>
+                                            <input type="checkbox" onclick="highlightImages(this)" class="same"  
+                                                id="sameContentCheck" value="sameContentCheck">
+                                                Same content
+                                            </label>
+                                    </div>
+                                    <div class="checkbox" >
+                                        <label>
+                                            <input type="checkbox" id="movedCheck" onclick="highlightImages(this)" 
+                                            class="change" value="movedCheck">    Highlight Moved ones
+                                        </label>
+                                    </div>
+                                    <div class="checkbox" >
+                                        <label>
+                                            <input type="checkbox" id="newlyAddedCheck" onclick="highlightImages(this)" 
+                                                class="change"  value="newlyAddedCheck"> Highlight newly added
+                                            </label>
+                                    </div>
+                                </form>
+                            </div>
+     
+                        </div>
+                    </div>
+                </div>
+            </div> <!--End modal2-->
 
-				  	<ul class="nav navbar-nav navbar-right">
-						<li><a href="/"><i></i></a></li>
-						<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
-						<li ng-if="main.loggedIn">
-							<a href="#/profile">
-								<i class="fa fa-x fa-user"></i> <strong>{{main.loginData.name}} </strong>
-							</a>
-						</li>
-						<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
-				  	</ul>
-				  	<br/>
-		  	</div>
-
-		  	<br/><br/>
-			<!--- Tab Navigation -->
-			<div class="text-info" ng-if="main.loggedIn">
-				<br/>
-	            <div class="col-md-12">
-	                <ul class="nav nav-tabs" role="tablist">
-	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
-	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index)" href=""> {{tab.name}}</a>
-	                    </li>
-	                </ul>
-	            </div>
-			</div>
-			
-		  		
-		</div>
-		
-	</nav>
-	<br/>
-	<div ng-view class="slide-animation"></div>
-	
-</body>
+        </div><!--Container fluid end-->
+    </body><!--Body section end-->
 </html>
