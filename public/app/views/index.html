@@ -41,20 +41,7 @@
 	<!--Javascript function call to change the image co-ordinate dynamically according to window size-->
 	<script src="app/views/js/b2b_image_script.js"></script> 
 	
-	<style>
-		img
-		{
-
-			float: left;
-			width: 200px;
-			height: 70px;
-			padding:0;
-			position:relative;
-			margin-left:45px;
-			margin-top: 0px;
-		}
-		
-	</style>
+	
 </head>
 
 <body ng-controller="MainController as main">
@@ -63,11 +50,11 @@
 		<div style="margin-right: 50px;">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#/dash" ng-if="main.loggedIn">
-					<img src="app/views/pages/images/ATS.png" alt="logo" />
+					<img src="app/views/pages/images/logo.png" alt="logo" />
 				</a>
 					
 				<a class="navbar-brand" href="#/" ng-if="!main.loggedIn">
-					<img src="app/views/pages/images/ATS.png" alt="logo"/>
+					<img src="app/views/pages/images/logo.png" alt="logo"/>
 				</a>
 				<br/><br/>
 				<button class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navHeaderCollapse">
