@@ -123,7 +123,7 @@
 			<div class="text-info navbar-collapse collapse navHeaderCollapse" ng-if="main.loggedIn">
 				<br/>
 	            <div class="col-md-12">
-	                <ul class="nav nav-tabs" role="tablist">
+	                <ul class="nav navbar-nav nav-tabs">
 	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
 	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index)" href=""> {{tab.name}}</a>
 	                    </li>
