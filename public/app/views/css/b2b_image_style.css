@@ -70,11 +70,7 @@
     z-index: 2;
 }
 
-img
-{
-    border: solid 1px white;
-    padding:5px;
-}
+
 .active_img
 {
     border: solid 2px blue;
