@@ -53,6 +53,9 @@ angular.module('mainCtrl',[])
 
   $scope.view_tab = 0;
 	 $scope.tabs = [{
+            name: 'Home',
+            tab_ref: '#/',
+        },{
             name: 'Floorplan Dashboard',
             tab_ref: '#/dash',
         }, {
