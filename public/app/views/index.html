@@ -85,7 +85,7 @@
 <body ng-controller="MainController as main">
 	
 	<nav class="navbar navbar-default navbar-static-top">
-		<div class="container" style="margin-right: 50px;">
+		<div style="margin-right: 50px;">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#/" ng-if="main.loggedIn">
 					<img src="app/views/pages/images/logo.png" alt="logo" />
@@ -103,8 +103,6 @@
 				
 			</div>
 
-		  	<div class="">
-
 				  	<ul class="nav navbar-nav navbar-right">
 						<li><a href="/"><i></i></a></li>
 						<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
@@ -116,9 +114,8 @@
 						<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
 				  	</ul>
 				  	<br/>
-		  	</div>
-
-		  	<br/><br/>
+		 
+		 <br/>
 			<!--- Tab Navigation -->
 			<div class="text-info navbar-collapse collapse navHeaderCollapse" ng-if="main.loggedIn">
 				<br/>
