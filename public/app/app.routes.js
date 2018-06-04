@@ -7,8 +7,7 @@ angular.module('appRoutes',['ngRoute'])
 			controller  : 'frontController'
 		})
 		.when('/home', {
-			
-			templateUrl : 'app/views/pages/home.html',
+			templateUrl : 'app/views/pages/main.html',
 			controller  : 'frontController'
 		})
 		// route for the home page
