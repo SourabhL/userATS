@@ -28,44 +28,17 @@ angular.module('appRoutes',['ngRoute'])
 			templateUrl : 'app/views/pages/main.html'
 			//controller  : 'mainController'
 		})
-		// route for the about page
-		.when('/about/:customerId', {
-			templateUrl : 'app/views/pages/about.html',
-			controller  : 'aboutController'
-		})
 		// route for the contact page
-		.when('/contact', {
-			templateUrl : 'app/views/pages/contact.html',
-			controller  : 'contactController'
-		})
-		// route for the contact page
-		.when('/documents', {
-			templateUrl : 'app/views/pages/document.html',
-		})
-		// route for the contact page
-		.when('/email', {
-			templateUrl : 'app/views/pages/email.html',
-		})
-		// route for the contact page
-		.when('/optimize', {
-			templateUrl : 'app/views/pages/optimize.html'
-		})
-		// route for the contact page
-		.when('/gFonts', {
-			templateUrl : 'app/views/pages/googleFonts.html'
-		})
-		// route for the dashboard page
 		.when('/dash', {
-			templateUrl : 'app/views/pages/dashboard.html'
+			templateUrl : 'app/views/pages/floorplanDashboard.html',
+		})
+		// route for the contact page
+		.when('/comingSoon', {
+			templateUrl : 'app/views/pages/comingSoon.html',
 		})
 		// route for the dashboard page
 		.when('/profile', {
 			templateUrl : 'app/views/pages/profile.html'
-		})
-		// route for the contact page
-		.when('/gCharts', {
-			templateUrl : 'app/views/pages/googleCharts.html'
 		});
 
-		//$locationProvider.html5Mode(true);
 });

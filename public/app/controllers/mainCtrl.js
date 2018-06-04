@@ -53,22 +53,30 @@ angular.module('mainCtrl',[])
 
   $scope.view_tab = 0;
 	 $scope.tabs = [{
-            name: 'Dashboard',
+            name: 'Floorplan Dashboard',
             tab_ref: '#/dash',
         }, {
-            name: 'Work Status',
-            tab_ref: '#/contact'
+            name: 'Edit Location',
+            tab_ref: '#/comingSoon'
         }
         , {
-            name: 'Documents',
-            tab_ref: '#/documents'
+            name: 'Issue for this location',
+            tab_ref: '#/comingSoon'
         }, {
-            name: 'HR Portal',
-            tab_ref: '#/home'
+            name: 'Image Gallery',
+            tab_ref: '#/comingSoon'
         },
        	{
-            name: 'Candidates',
-            tab_ref: '#/email'
+            name: 'Questionnaries',
+            tab_ref: '#/comingSoon'
+        },
+        {
+            name: 'All Content',
+            tab_ref: '#/comingSoon'
+        },
+		{
+            name: 'Orders',
+            tab_ref: '#/comingSoon'
         }
         ];
     
