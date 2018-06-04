@@ -100,7 +100,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				
+				<br/>
+				<br/>
 			</div>
 				<div>
 				  	<ul class="nav navbar-nav navbar-right">
@@ -115,12 +116,12 @@
 				  	</ul>
 				  	<br/>
 				</div>
-					<br/>
+					
 			<!--- Tab Navigation -->
 			<div class="text-info navbar-collapse collapse navHeaderCollapse" ng-if="main.loggedIn">
 				<br/>
 	            <div class="col-md-12">
-	                <ul class="nav navbar-nav nav-tabs">
+	                <ul class="nav navbar-nav">
 	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
 	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index)" href=""> {{tab.name}}</a>
 	                    </li>
