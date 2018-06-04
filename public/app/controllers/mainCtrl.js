@@ -38,7 +38,7 @@ angular.module('mainCtrl',[])
 				});
 
 				if(data.success)
-					$location.path('/dash');
+					$location.path('/');
 				else
 					vm.error = data.message;
 			})
