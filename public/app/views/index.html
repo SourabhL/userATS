@@ -41,7 +41,45 @@
 	<!--Javascript function call to change the image co-ordinate dynamically according to window size-->
 	<script src="app/views/js/b2b_image_script.js"></script> 
 	
+	<style type="text/css">
 	
+		.modal {
+                text-align: center;
+                padding: 0!important;
+            }
+
+            @media screen and (min-width: 768px) {
+              .modal:before {
+			  content: '';
+			  display: inline-block;
+			  height: 100%;
+			  vertical-align: middle;
+
+							}
+				}
+
+            .modal-dialog {
+                display: inline-block;
+                text-align: left;
+                vertical-align: middle;
+                overflow-y: auto;    
+                overflow-x: hidden;
+                width: auto;
+                height: 200%;
+                min-width: 300px;  
+				position: center;
+				
+			}
+			
+            .modal-content  {
+                
+                height: 40%;
+                -webkit-border-radius: 0px !important;
+                -moz-border-radius: 0px !important;
+                border-radius: 0px !important; 
+            } 
+	
+	</style>
 </head>
 
 <body ng-controller="MainController as main">
