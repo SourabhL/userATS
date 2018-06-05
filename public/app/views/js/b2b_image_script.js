@@ -1,78 +1,123 @@
-$(document).ready(function (e) 
+function init()
 {
-    $('img[usemap]').rwdImageMaps();
+	console.log('Init');
+	$('.map').maphilight({
+					
+		
+	});
+
+	$('#mobileList').on('change',function()
+	{
+		var image_source = $("#mobileList option:selected").val();
+		var image_details = $('option:selected', this).attr('details');;
+
+		phoneDetails(image_details,image_source);
+			
+	});
+
+	$('map[name="shelf"] area').on('click',function()
+	{
+		phoneDetails($(this).attr('details'),$(this).attr('source'));
+		
+		$("#mobileList").val($(this).attr('source'));
+	});
+}
+   
+//Function to display the details of the phone selected
+function phoneDetails(image_details,image_source)
+{
+    var phone_details_array = image_details.split(','); 
+    var current_detail_array =[];
+    var content = '<br/><table class="table table-bordered">';
     
-    $("img").on("click",function()
+    $('#content').empty(); //Empty the information Table
+    $("#my_image").attr("src",'app/views/Images/'+image_source+'.png').show(); // Set the Bigger image to a new one              
+    
+    
+    for(i=0;i<phone_details_array.length;i++)
     {
-        $('.current_img').removeClass('current_img');
-        $(this).toggleClass("current_img");
-    })
-});
+        current_detail_array = phone_details_array[i].split(':');
+        content += '<tr><td name="">' + current_detail_array[0]  +'</td><td>' + current_detail_array[1] + '</td></tr>';
+    }
+    content += "</table>";
+    $('#content').html(content);
+}
 
 
 // if highlight changed content checked, check both
 function highlightImages(clickedElement)
 {
-   
-    // if highlight changed content
+    
     if($(clickedElement).val() == 'highlightChangedCheck')
     {
-        // select all mobiles with some changed content is up
+        var dataMoved = $('.moved').data('maphilight');
+        var dataNewlyAdded = $('.newlyAdded').data('maphilight');
+        
         if ($(clickedElement).prop('checked'))
         {
             $('.change').prop('checked', true);
-            $(".moved").addClass("active_img");
-            $(".newlyAdded").addClass("active_img");
+
+            dataMoved.alwaysOn = true;    
+            dataNewlyAdded.alwaysOn = true;            
         }
         else
         {
             $('.change').prop('checked', false);
-            $(".moved").removeClass("active_img");
-            $(".newlyAdded").removeClass("active_img");
-
+          
+            dataMoved.alwaysOn = false;
+            dataNewlyAdded.alwaysOn = false; 
         }
+        $('.moved').data('maphilight', dataMoved).trigger('alwaysOn.maphilight');
+        $('.newlyAdded').data('maphilight', dataNewlyAdded).trigger('alwaysOn.maphilight');
+        
         
     }
     else if($(clickedElement).val() == 'sameContentCheck')
     {
-        $(".same").addClass("active_img");
-        // select all mobiles with some changed content is up
+        var data = $('.same').data('maphilight');
+        
         if ($(clickedElement).prop('checked'))
         {
-            $(".same").addClass("active_img");
+            data.alwaysOn = true;
         }
         else
         {
-            $(".same").removeClass("active_img");
+            data.alwaysOn = false;
 
         }
+        $('.same').data('maphilight', data).trigger('alwaysOn.maphilight');
     }
     else if(($(clickedElement).val() == 'movedCheck')) //moved
     {
-        // select all mobiles with some changed content is up
+       
         if ($('#movedCheck').prop('checked') && $('#newlyAddedCheck').prop('checked'))
         {
             $('#highlightChangedCheck').prop('checked', true);
+            
         }
         else
         {
             $('#highlightChangedCheck').prop('checked', false);
         }
         
+        var data = $('.moved').data('maphilight');
+        
         if ($(clickedElement).prop('checked'))
         {
-            $(".moved").addClass("active_img");
+            data.alwaysOn = true;
         }
         else
         {
-            $(".moved").removeClass("active_img");
+            data.alwaysOn = false;
 
         }
+
+        $('.moved').data('maphilight', data).trigger('alwaysOn.maphilight');
         
     }
-    else if(($(clickedElement).val() == 'newlyAddedCheck')) //moved
+    else if(($(clickedElement).val() == 'newlyAddedCheck')) //newlyAdded
     {
-        // select all mobiles with some changed content is up
+        
         if ($('#movedCheck').prop('checked') && $('#newlyAddedCheck').prop('checked'))
         {
             $('#highlightChangedCheck').prop('checked', true);
@@ -82,15 +127,18 @@ function highlightImages(clickedElement)
             $('#highlightChangedCheck').prop('checked', false);
         }
         
+        var data = $('.newlyAdded').data('maphilight');
+        
         if ($(clickedElement).prop('checked'))
         {
-            $(".newlyAdded").addClass("active_img");
+            data.alwaysOn = true;
         }
         else
         {
-            $(".newlyAdded").removeClass("active_img");
+            data.alwaysOn = false;
 
         }
+        $('.newlyAdded').data('maphilight', data).trigger('alwaysOn.maphilight');
         
     }
 }
