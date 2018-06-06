@@ -30,7 +30,7 @@ function phoneDetails(image_details,image_source)
 {
     var phone_details_array = image_details.split(','); 
     var current_detail_array =[];
-    var content = '<br/><table class="table table-striped">';
+    var content = '<br/><table class="table table-bordered">';
     
     $('#content').empty(); //Empty the information Table
     $("#my_image").attr("src",'app/views/Images/'+image_source+'.png').show(); // Set the Bigger image to a new one              
