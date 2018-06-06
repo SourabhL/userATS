@@ -44,12 +44,7 @@
 	<script type="text/javascript" src="app/views/js/jquery.maphilight.js"></script>
 
 	<script src="app/views/js/b2b_image_script.js"></script> 
-	<script type="text/javascript">
-		$(".navbar-nav li a").click(function(event) {
-			$(".navbar-collapse").collapse('hide');
-		  });
 	
-	</script>
 	
 </head>
 
@@ -108,6 +103,11 @@
 	</nav>
 	<br/>
 	<div ng-view class="slide-animation"></div>
-	
+	<script type="text/javascript">
+		$(document).ready(function(){$(".navbar-nav li a").click(function(event) {
+			$(".navbar-collapse").collapse('hide');
+		  });
+		});
+	</script>
 </body>
 </html>
