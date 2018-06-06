@@ -1,15 +1,17 @@
 function init()
 {
-	console.log('Init');
+	
 	$('.map').maphilight({
 					
 		
 	});
-
+	
+	highlightImages();
+	
 	$('#mobileList').on('change',function()
 	{
 		var image_source = $("#mobileList option:selected").val();
-		var image_details = $('option:selected', this).attr('details');;
+		var image_details = $('option:selected', this).attr('details');
 
 		phoneDetails(image_details,image_source);
 			
@@ -28,7 +30,7 @@ function phoneDetails(image_details,image_source)
 {
     var phone_details_array = image_details.split(','); 
     var current_detail_array =[];
-    var content = '<br/><table class="table table-bordered">';
+    var content = '<br/><table class="table table-striped">';
     
     $('#content').empty(); //Empty the information Table
     $("#my_image").attr("src",'app/views/Images/'+image_source+'.png').show(); // Set the Bigger image to a new one              
@@ -141,6 +143,22 @@ function highlightImages(clickedElement)
         $('.newlyAdded').data('maphilight', data).trigger('alwaysOn.maphilight');
         
     }
+	else
+	{
+		var dataMoved = $('.moved').data('maphilight');
+        var dataNewlyAdded = $('.newlyAdded').data('maphilight');
+		var same = $('.same').data('maphilight');
+
+		$('.change,.moved,.same,.highlightChangedCheck').prop('checked', false);
+          
+		dataMoved.alwaysOn = false;
+		dataNewlyAdded.alwaysOn = false; 
+		same.alwaysOn = false;
+        
+		$('.same').data('maphilight', same).trigger('alwaysOn.maphilight');
+        $('.moved').data('maphilight', dataMoved).trigger('alwaysOn.maphilight');
+        $('.newlyAdded').data('maphilight', dataNewlyAdded).trigger('alwaysOn.maphilight')
+	}
 }
     
          
