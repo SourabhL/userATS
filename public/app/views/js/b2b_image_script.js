@@ -1,9 +1,12 @@
 function init()
 {
+	$('img[usemap]').rwdImageMaps();
+	
 	$('.map').maphilight({
 					
 		
 	});
+	
 	
 	highlightImages();
 	
