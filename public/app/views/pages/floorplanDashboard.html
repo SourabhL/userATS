@@ -3,16 +3,10 @@
 
 <div class="container-fluid" style="overflow-x:hidden"><!--Container fluid-->
 				
-	<div class="easyzoom easyzoom--overlay"> 
-		<a href="app/views/Images/mystore.jpg" id="zoomsrc"></a>
-	</div>
-   
-	<div id="imgbar" class="col-md-12">
-		<a href="app/views/Images/mystore.jpg">
-			<img class="img-responsive store"  src="app/views/Images/mystore.png" 
+	   
+	<div class="col-md-12">
+		<img class="img-responsive store"  src="app/views/Images/mystore.png" 
 				style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >
-		</a>
-		<link rel="stylesheet" href="app/views/pages/styles/easyzoom.css" type="text/css"/>
 	</div>
 				
 	<map name="mobilestore"><!--Map started -->
@@ -42,7 +36,7 @@
 
 				<!--navidation bar on modal-->
 				<div class="modal-header" >
-					<ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:13px;">
+					<ul class="nav navbar-nav" id="tabContent"  style="border:none;font-size:13px;">
 						<li class="active link-4"><a href="" data-toggle="tab">View Fixture</a></li>
 						<li class="link-4"><a href="" >Accessories and POP</a></li>
 						<li class="link-4"><a href="" >Devices and Display</a></li>
@@ -73,7 +67,7 @@
 			<div class="modal-content" style="height:50%">
 				<!--navidation bar on modal-->
 				<div class="modal-header" >
-					<ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:15px">
+					<ul class="nav navbar-nav" id="tabContent"  style="border:none;font-size:15px">
 						<li class="active" class="link-4"><a href="" data-toggle="tab">View Fixture</a></li>
 						<li class="link-4"><a href="" >Accessories and POP</a></li>
 						<li class="link-4"><a href="" >Devices and Display</a></li>
@@ -218,3 +212,12 @@
 	</div> <!--End modal2-->
 
 </div><!--Container fluid end-->
+<script type="text/javascript">
+		$(document).ready(function(){$(".navbar-nav li a").click(function(event) {
+			 $('html, body').animate(
+			{
+				scrollTop: 0
+			}, 'slow');
+		  });
+		
+</script>
