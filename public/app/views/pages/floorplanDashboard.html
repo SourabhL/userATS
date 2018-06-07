@@ -1,23 +1,23 @@
-<div class=""><!--Container fluid-->
-
-	<img class="img-responsive store" src="app/views/Images/mystore.png" style="margin-left: 60px;width:900px;height:446px" usemap="#mobilestore" ><!--Mobile store Image -->
- 
+<div  style="overflow-x:hidden"><!--Container fluid-->
+<div class="col-md-12">
+	<img class="img-responsive" src="app/views/Images/mystore.png" style="margin:0;padding: 0;width:900px;height:446px;border:5px solid black;" usemap="#mobilestore" /><!--Mobile store Image -->
+ </div>
 	<map name="mobilestore"><!--Map started -->
                 
 		<!-- upper left-->
-		<area  coords="93,12,223,84" shape="rect"
+		<area  coords="93,12,223,84" shape="rect" href="#"
 			  data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
 
 		  <!--upper right-->
-		<area coords="702,15,832,88" shape="rect"  
+		<area coords="702,15,832,88" shape="rect"  href="#" 
 			   data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
 
 		<!--first-->
-	   <area shape="rect" coords="183,161,325,233"  data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+	   <area shape="rect" coords="183,161,325,233"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 	   <!--second-->
-		<area shape="rect" coords="364,160,503,230"  data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+		<area shape="rect" coords="364,160,503,230"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 		<!--third-->
-		<area shape="rect" coords="557,162,697,230" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+		<area shape="rect" coords="557,162,697,230" href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 
 	</map>
 	<!--Map End here............. -->
@@ -67,7 +67,7 @@
 						<li class="link-4"><a href="" >Fixtures and Hardware</a></li>
 						<li class="link-4"><a href="" >Issues</a></li>
 						<li class="link-4"><a href="" >Gallery</a></li>
-						<li class="link-4"><a href="" ><div data-dismiss="modal">&times;</div></a></li>
+						<li class="link-4 pull-right" data-dismiss="modal"><a href="" ><div >&times;</div></a></li>
 					</ul>
 				</div>
 				<br/>
@@ -90,9 +90,9 @@
 				</div>
 				<br/>
 				<div class="row" style="border:none;">
-					<div class="col-md-offset-1 col-md-4" style="padding-top:0.5%" >
+					<div class="col-md-5" style="padding-top:0.5%;padding-left:5%">
 						<!-- Floorplan Image -->
-						<img class="map" src="app/views/Images/Shelf2.jpg" usemap="#shelf" style="width: 260px" />
+						<img class="map img-responsive " src="app/views/Images/Shelf2.jpg" usemap="#shelf" style="padding-left: 5%; margin-left: 5%;width:260px;" />
 						
 						<map name="shelf" class="Mobiles">
 							
@@ -107,7 +107,7 @@
 								source='ASUS_Zenfone_V_Live'
 								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}' />
 						  
-							<area coords="184,0,238,70"  shape="rect" class="moved" href="sun.htm"
+							<area coords="189,1,232,64" shape="rect" class="moved"
 								details="Model:Oppo F5, Brand:oppo,Size:7 inches,Camera: 23MP"       source='MotoZ2Play'
 								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}'/>
 				  
@@ -146,37 +146,29 @@
 								  
 						</map>              
 						
-						<form>
+						<form id="phoneInfoForm" style="font-size:14px;">
 							<div class="row">
-								<div class="col-md-8">
+								<div class="col-md-9">
 									<div class="checkbox" >
 										<label class="text-primary">
 											<input type="checkbox" onclick="highlightImages(this)" id="highlightChangedCheck" 
-											value="highlightChangedCheck">
+											value="highlightChangedCheck" class="highlightChangedCheck">
 												Highlight changed content
 											</label>
 									</div>
-									</div>
-									 <div class="col-md-4">
-									<div class="checkbox" >
-										<label class="text-primary">
-											<input type="checkbox" onclick="highlightImages(this)" class="same"  
-												id="sameContentCheck" value="sameContentCheck">
-												Same content
-											</label>
-									</div>
 								</div>
+								
 							</div>
 							<div class="row">
-							<div class="col-md-8">
-								<div class="checkbox" >
-									<label class="text-primary">
-										<input type="checkbox" id="movedCheck" onclick="highlightImages(this)" 
-										class="change" value="movedCheck">    Highlight Moved ones
-									</label>
+								<div class="col-md-6">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" id="movedCheck" onclick="highlightImages(this)" 
+											class="change" value="movedCheck">    Highlight Moved ones
+										</label>
+									</div>
 								</div>
-								</div>
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="checkbox" >
 										<label class="text-primary">
 											<input type="checkbox" id="newlyAddedCheck" onclick="highlightImages(this)" 
@@ -185,9 +177,20 @@
 									</div>
 								</div>
 							 </div>
+							 <div class="row">
+								<div class="col-md-5">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" onclick="highlightImages(this)" class="same"  
+												id="sameContentCheck" value="sameContentCheck">
+												Same content
+											</label>
+									</div>
+								</div>
+							 </div>
 						</form>
 					</div>
-	   
+				<br/>
 					<div class="col-md-3" id="big-image">
 						<br/>
 						<img id= "my_image"  src="" style="display:none;width: 150px;height: 250px"/>
