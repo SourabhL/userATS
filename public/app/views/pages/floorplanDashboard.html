@@ -1,18 +1,24 @@
+
+<script>
+$(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>
+
+
 <div class="container-fluid" style="overflow-x:hidden"><!--Container fluid-->
 				
-				
-    <div id="mcap">Click to zoom</div>
-    <div class="easyzoom easyzoom--overlay"> <a href="app/views/Images/mystore.jpg" id="zoomsrc">
-
-      </a></div>
+	<div class="easyzoom easyzoom--overlay"> 
+		<a href="app/views/Images/mystore.jpg" id="zoomsrc"></a>
+	</div>
    
-	            <div id="imgbar" class="col-md-12">
-					<a href="app/views/Images/mystore.jpg">
-					<img class="img-responsive store"  src="app/views/Images/mystore.png" 
-					style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >
-				</a>
-				<link rel="stylesheet" href="app/views/pages/styles/easyzoom.css" type="text/css"/>
-				</div>
+	<div id="imgbar" class="col-md-12">
+		<a href="app/views/Images/mystore.jpg">
+			<img class="img-responsive store"  src="app/views/Images/mystore.png" 
+				style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >
+		</a>
+		<link rel="stylesheet" href="app/views/pages/styles/easyzoom.css" type="text/css"/>
+	</div>
 				
 	<map name="mobilestore"><!--Map started -->
                 
@@ -111,49 +117,51 @@
 							<!--moved  -->
 							  <area  coords="31,0,83,65" shape="rect" class="moved" 
 								details="Model:Galaxys9, Brand:Samsung,Size:6.2 inches,Camera:13MP"
-								source='LG_V30'
+								source='LG_V30' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}'/>
 							
 							<area  coords="113,1,155,69" shape="rect" class="moved"
 								details="Model:Vivo v7, Brand:VIVO,Size:5.2 inches,Camera: 17MP"
-								source='ASUS_Zenfone_V_Live'
+								source='ASUS_Zenfone_V_Live' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}' />
 						  
 							<area coords="189,1,232,64" shape="rect" class="moved"
-								details="Model:Oppo F5, Brand:oppo,Size:7 inches,Camera: 23MP"       source='MotoZ2Play'
+								details="Model:Oppo F5, Brand:oppo,Size:7 inches,Camera: 23MP"       
+								source='MotoZ2Play'  style="cursor: pointer"
 								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}'/>
 				  
 							<!-- newlyAdded -->
 							<area coords="31,74,85,140" shape="rect" class="newlyAdded"
 								details="Model:Iphone 6, Brand:oppo,Size:7 inches,Camera: 23MP"
-								source='Apple-iPhoneX'
+								source='Apple-iPhoneX' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/>                          
+								
 							<area coords="108,75,161,139"  shape="rect" class="newlyAdded"
 								details="Model:Iphone 6s, Brand:oppo,Size:7 inches,Camera: 23MP"     
-								source='SAMSUNG_Galaxy_S9'
+								source='SAMSUNG_Galaxy_S9' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/> 
 
 								 
 							<area coords="183,75,233,138"  shape="rect" class="newlyAdded"
 								details="Model:Iphone 7, Brand:oppo,Size:7 inches,Camera: 23MP"    
-								source='Great_Black_VZW'
+								source='Great_Black_VZW' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/>
 									
 									
 							<!-- same -->
 							<area coords="33,144,80,212"  shape="rect" class="same"
 								details="Model:Iphone 7s, Brand:oppo,Size:7 inches,Camera: 23MP" 
-								source='samsung-galaxy-j3'
+								source='samsung-galaxy-j3' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
 									
 							<area coords="110,144,159,206"  shape="rect" class="same"
 								details="Model:Iphone 8, Brand:oppo,Size:7 inches,Camera: 23MP" 
-								source='GOOGLE_Walleye_Denim'
+								source='GOOGLE_Walleye_Denim' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
 									
 							<area coords="186,143,229,207"  shape="rect" class="same"
 								details="Model:Iphone X, Brand:oppo,Size:7 inches,Camera: 23MP" 
-								source='Google_Marlin_Slate'
+								source='Google_Marlin_Slate' style="cursor: pointer"
 								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
 								  
 						</map>              
