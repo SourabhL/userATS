@@ -1,6 +1,6 @@
 function init()
 {
-	$('img[usemap]').rwdImageMaps();
+	//$('img[usemap]').rwdImageMaps();
 	
 	$('.map').maphilight({
 					
