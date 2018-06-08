@@ -213,11 +213,16 @@
 
 </div><!--Container fluid end-->
 <script type="text/javascript">
-		$(document).ready(function(){$(".navbar-nav li a").click(function(event) {
-			 $('html, body').animate(
-			{
-				scrollTop: 0
-			}, 'slow');
-		  });
+		
+	$(document).ready(function(){$(".navbar-nav li a").click(function(event) 
+	{
+		$(".navbar-collapse").collapse('hide');
+	});
+		  
+	$('html, body').animate(
+	{
+		scrollTop: 0
+	}, 'slow');
+		
 		
 </script>

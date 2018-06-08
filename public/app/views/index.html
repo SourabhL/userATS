@@ -98,7 +98,7 @@
 	            <div class="col-md-12">
 	                <ul class="nav navbar-nav">
 	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
-	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index)" href=""> {{tab.name}}</a>
+	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index);"> {{tab.name}}</a>
 	                    </li>
 	                </ul>
 	            </div>
@@ -115,13 +115,7 @@
 		$(document).ready(function(){$(".navbar-nav li a").click(function(event) {
 			$(".navbar-collapse").collapse('hide');
 		  });
-		
-			 $('html, body').animate(
-			{
-				scrollTop: 0
-			}, 'slow');
-
-		});
+		  });
 		
 	</script>
 </body>
