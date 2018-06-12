@@ -7,7 +7,6 @@ function init()
 		
 	});
 	
-	
 	highlightImages();
 	
 	$('#mobileList').on('change',function()
