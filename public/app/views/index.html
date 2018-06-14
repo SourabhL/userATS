@@ -53,7 +53,17 @@
 	
 	
 </head>
+<script>
 
+function bringtotop()
+{
+//alert('hiii');
+ $(this).scrollTop(0);
+}
+
+
+
+</script>
 <body ng-controller="MainController as main" style="overflow-x:hidden">
 		
 	<nav class="navbar navbar-default navbar-static-top">
@@ -93,12 +103,12 @@
 
 		  	<br/>
 			<!--- Tab Navigation -->
-			<div class="text-info navbar-collapse collapse navHeaderCollapse" ng-if="main.loggedIn">
+			<div class="text-info collapse navbar-collapse navHeaderCollapse" ng-if="main.loggedIn">
 				<br/>
 	            <div class="col-md-12">
 	                <ul class="nav navbar-nav">
-	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
-	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index);"> {{tab.name}}</a>
+	                    <li ng-class="{'active': view_tab == $index}"  ng-repeat="tab in tabs"> 
+	                        <a class="btn-lg" href="{{tab.tab_ref}}" onclick="bringtotop()" ng-click="changeTab($index);"> {{tab.name}}</a>
 	                    </li>
 	                </ul>
 	            </div>
